@@ -1,13 +1,13 @@
 import { MCPTool } from "mcp-framework";
 import { z } from "zod";
 
-interface ImessageInput {
+interface GetChatsInput {
   message: string;
 }
 
-class ImessageTool extends MCPTool<ImessageInput> {
-  name = "imessage";
-  description = "Get imessage information for an account";
+class GetChatsTool extends MCPTool<GetChatsInput> {
+  name = "get-chats";
+  description = "GetChats tool description";
 
   schema = {
     message: {
@@ -16,9 +16,9 @@ class ImessageTool extends MCPTool<ImessageInput> {
     },
   };
 
-  async execute(input: ImessageInput) {
+  async execute(input: GetChatsInput) {
     return `Processed: ${input.message}`;
   }
 }
 
-export default ImessageTool;
+export default GetChatsTool;
